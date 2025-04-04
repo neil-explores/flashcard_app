@@ -1,0 +1,38 @@
+<%= form_with(model: fillin_card) do |form| %>
+  <% if fillin_card.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(fillin_card.errors.count, "error") %> prohibited this Fill-in card from being saved:</h2>
+
+      <ul>
+        <% fillin_card.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= render 'fillable_card_help'%>
+
+  <%= form.hidden_field :fillin_domain_id %>
+
+  <div class="row">
+    <div class="col-sm-6">
+      <%= form.label :fillin_category_id, "Fillin Category" %>
+      <%= form.collection_select :fillin_category_id, form.object.fillin_domain.fillin_categories.all.order(:name), :id, :name, {}, class: "form-control"%>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= form.label :question, "Question" %>
+    <%= form.rich_text_area :question, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :additional_info, "Additional Info" %>
+    <%= form.rich_text_area :additional_info %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

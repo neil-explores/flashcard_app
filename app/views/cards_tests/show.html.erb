@@ -1,0 +1,6 @@
+<div class="alert alert-success">
+  <strong>Test Complete!</strong> You got <strong><%=@cards_test.test.cards_tests.answered_correct.size%></strong> Out of <strong><%= @cards_test.test.cards_tests.size%></strong> Questions Correct!
+</div>
+
+
+<%= link_to 'Back to Tests', tests_path %>

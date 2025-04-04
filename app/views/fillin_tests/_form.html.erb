@@ -1,0 +1,35 @@
+<%= form_with(model: fillin_test) do |form| %>
+  <% if fillin_test.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(fillin_test.errors.count, "error") %> prohibited this Fill-in test from being saved:</h2>
+
+      <ul>
+        <% fillin_test.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="field col-sm-12">
+      <%= form.label :name %>
+      <%= form.text_field :name, class: 'form-control' %>
+    </div>
+  </div>
+  <br>
+
+  <h3 class='text-muted'>Select Categories. All cards within that category will be added</h3>
+  <div class="field">
+    <%= form.collection_check_boxes(:fillin_category_ids, FillinCategory.all, :id, :test_creation_selectbox_to_s) do |b| %>
+      <span class="badge badge-pill badge-info"><%= b.object.fillin_cards.size%> </span>
+      <%= b.check_box %>
+      <%= b.label %>
+      <br>
+    <% end %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

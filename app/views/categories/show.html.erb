@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class="text-info">
+  <strong>Name:</strong>
+  <%= @category.name %>
+</h1>
+
+<%= link_to 'Edit', edit_category_path(@category) %> |
+<%= link_to 'All Categories', categories_path %>
+
+
+<table class="table table-striped">
+  <thead>
+    <h2 class="text-info text-center">Cards <%= link_to "+ Add Card to Category", new_card_path(domain_id: @category.domain, category_id: @category), class: "btn btn-success", autofocus: true %></h2>
+    <tr>
+      <th>Front</th>
+      <th>Back</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @category.cards.each do |card| %>
+      <tr>
+        <td><%= card.front %></td>
+        <td><%= card.back %></td>
+        <td><%= link_to 'Show', card %></td>
+        <td><%= link_to 'Edit', edit_card_path(card) %></td>
+        <td><%= link_to 'Destroy', card, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

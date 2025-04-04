@@ -1,0 +1,39 @@
+<%= form_with(model: card) do |form| %>
+  <% if card.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(card.errors.count, "error") %> prohibited this card from being saved:</h2>
+
+      <ul>
+        <% card.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <%= form.hidden_field :domain_id %>
+  <%= form.hidden_field :category_id %>
+
+  <div class="row">
+    <div class="col-sm-6">
+      <%= form.label :category_id, "Fillin Category" %>
+      <%= form.collection_select :category_id, form.object.domain.categories.all.order(:name), :id, :name, {}, class: "form-control"%>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= form.label :front, "Front of Card" %>
+    <%= form.rich_text_area :front, autofocus: true %>
+  </div>
+
+  <br>
+  <div class="field">
+    <%= form.label :back ,"Back of Card" %>
+    <%= form.rich_text_area :back %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: "btn btn-success" %>
+  </div>
+<% end %>

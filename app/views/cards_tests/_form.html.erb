@@ -1,0 +1,45 @@
+<%= form_with(model: cards_test) do |form| %>
+  <% if cards_test.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(cards_test.errors.count, "error") %> prohibited this cards_test from being saved:</h2>
+
+      <ul>
+        <% cards_test.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="col-sm-5">
+      <div class="h-100 card card-front card-front-js <%= hide_front_card(@cards_test.test)%>">
+        <div class="card-header">Flashcard - Front</div>
+        <div class="card-body"><%= @cards_test.card.front %></div>
+      </div>
+    </div>
+    <div class="col-sm-2">
+      <br><br>
+      <div class="text-center" id="flip-card-btn"><button type=button class="flip-card-js btn btn-outline-info">Flip Card</button></div>
+      <br><br>
+      <div class="text-center">
+        <div class="actions">
+          <%= form.submit "Correct", name: "Correct", class: "correct-answer-js btn btn-outline-success" %>
+        </div>
+      </div>
+      <br>
+      <div class="text-center">
+        <div class="actions">
+          <%= form.submit "Incorrect", name: "Incorrect", class: "incorrect-answer-js btn btn-outline-danger" %>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-5">
+      <div class="h-100 card card-back card-back-js <%= hide_back_card(@cards_test.test)%>">
+        <div class="card-header">Flashcard - Back</div>
+        <div class="card-body"><%= @cards_test.card.back %></div>
+      </div>
+    </div>
+  </div>
+
+<% end %>

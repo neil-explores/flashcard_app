@@ -1,0 +1,11 @@
+<h1>Editing Fillin Card</h1>
+
+<%= render 'form', fillin_card: @fillin_card %>
+
+<%= link_to 'Show', @fillin_card %> |
+
+<% if @fillin_card.persisted? %>
+  <%= link_to 'Back to Fillin Category', fillin_category_path(@fillin_card.fillin_category) %>
+<% else %>
+  <%= link_to 'Back', fillin_cards_path %>
+<% end %>

@@ -1,0 +1,8 @@
+<h1>Edit Card for <span class="text-muted"><%= @card.category.name %></span></h1>
+
+
+<%= render 'form', card: @card %>
+
+<%= link_to 'Show', @card %> |
+<br>
+<%= link_to 'Back to Category', @card.category, class: "btn btn-info" %>
