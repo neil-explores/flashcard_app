@@ -1,11 +1,11 @@
 # Welcome to the Flashcard App
 This flashcard app includes a number of useful features, including:
-- Create both tradaitional-looking flashcards, as well as interactive, fill-in flashcards.
+- Create both tradaitional-looking flashcards, as well as interactive fill-in flashcards.
 - Add images to your flashcards
 - Easily create flashcard tests.
 - Randomize the flashcard order in your tests
 - Progress bar during flashcard tests
-- Tests includes hotkeys
+- Option to use hotkeys during tests instead of mouse
 - Review your test results
 - Quickly create new tests that combine previous tests, or create tests that include cards that were answered incorrectly.  
 
