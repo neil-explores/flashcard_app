@@ -1,34 +1,29 @@
 # Welcome to the Flashcard App
-This flashcard app includes a number of awesome features, including:
-
-- Helping you keep your flashcards organized: associate your flashcards to a particular `domain`, and within that domain a `category`
+This flashcard app includes a number of useful features, including:
+- Create both tradaitional-looking flashcards, as well as interactive, fill-in flashcards.
 - Add images to your flashcards
-- Easily create flashcard tests. Running tests always randomizes the flashcard order
-- Enjoy a great flashcard test interface that shows your progress, and includes hotkeys
+- Easily create flashcard tests.
+- Randomize the flashcard order in your tests
+- Progress bar during flashcard tests
+- Tests includes hotkeys
 - Review your test results
 - Quickly create new tests that combine previous tests, or create tests that include cards that were answered incorrectly.  
 
-![main_page](https://user-images.githubusercontent.com/38234505/156952539-a250d8d6-65f9-4745-b253-f500704d5231.png)
+## Traditional Flashcards
+![flashcard-test-question](https://github.com/user-attachments/assets/817035e3-4763-455e-82ce-31e659320f76)
+
 
 <br>
 <br>
 
-![drag-and-drop-image-feature](https://user-images.githubusercontent.com/38234505/156952592-5f5eff3d-8e4a-49e1-b0fd-c86a30dd05f6.png)
+## Fill-in Flashcards
+
+![fillin-example-create](https://github.com/user-attachments/assets/11e3de9d-63db-4af0-8527-6e70f1c654e5)
 
 <br>
 <br>
 
-![flashcard_test_creation](https://user-images.githubusercontent.com/38234505/156953163-c2355fc5-1042-4634-8405-5b7d9fa358a5.png)
-
-<br>
-<br>
-
-![flashcard_test_screen](https://user-images.githubusercontent.com/38234505/156952755-1e0bcef4-e82b-47be-a577-716ca42fc4e1.png)
-
-<br>
-<br>
-
-![flashcard_test_results](https://user-images.githubusercontent.com/38234505/156952782-e52457cb-8761-400e-80b5-13ecc7820db0.png)
+![fillin-example-question](https://github.com/user-attachments/assets/9e56b5d2-19c9-4167-b27b-03007811c4d0)
 
 
 ## Software Requirements
@@ -65,7 +60,8 @@ What this means:
 
 Personally, I decided to nest my flashcard app into a directory called **meta_apps**. Inside my meta_apps directory you can see the **flashcard_app**, as well as the **imported_dbs** directory where all the flashcard app data lives:
 
-![general_tree_structure](https://user-images.githubusercontent.com/38234505/156951845-fd0581f6-045d-49f7-8051-15ff906a6494.png)
+![flashcard-database](https://github.com/user-attachments/assets/e33de4fc-99fd-4508-943d-3e031e13f86a)
+
 
 Finally, run `rails db:migrate` to create your database file.
 
