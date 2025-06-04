@@ -40,6 +40,8 @@ This app is configured to get up and running easily in a docker container via th
   - this will drop you inside the container and at the root of the app
 - To start the server: `rails s -b 0.0.0.0`
 
+![deploy-demo-gif](README_assets/deploy_demo.gif)
+
 To stop the server press `Ctrl-C`.
 
 To exit out of the container type `exit`
