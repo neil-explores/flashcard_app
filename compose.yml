@@ -1,0 +1,10 @@
+services:
+  flashcard_app_service:
+    build: .
+    ports:
+      - "3000:3000"
+    stdin_open: true
+    tty: true
+    volumes:
+      - .:/flashcard_app
+    working_dir: /flashcard_app
